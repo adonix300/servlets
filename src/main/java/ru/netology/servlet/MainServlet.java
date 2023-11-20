@@ -23,9 +23,7 @@ public class MainServlet extends HttpServlet {
   @Override
   public void init() {
     try(final var context = new AnnotationConfigApplicationContext(JavaConfig.class)) {
-      final var controller = context.getBean(PostController.class);
-      final var service = context.getBean(PostService.class);
-      final var isSame = service == context.getBean("postService");
+      controller = context.getBean(PostController.class);
     }
 //    final var repository = new PostRepository();
 //    final var service = new PostService(repository);
